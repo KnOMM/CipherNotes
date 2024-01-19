@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+    <div th:replace="~{fragments/header :: header-css}"></div>
+</head>
+<body>
+<div th:replace="~{fragments/header :: header}"></div>
+<p>
+<div th:if="${param.logout}">
+    <div class="alert alert-success"> You have been logged out.</div>
+</div>
+Welcome <b th:text="${#authentication.getPrincipal()?.username}"></b>
+Welcome <b th:text="${#authentication.getPrincipal()?.password}"></b>
+Welcome <b th:text="${#authentication.getPrincipal()?.email}"></b>
+</p>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
