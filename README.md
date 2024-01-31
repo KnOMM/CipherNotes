@@ -9,3 +9,13 @@ Welcome to the Simple Enciphering WEB App! This application allows you to enciph
 Feel free to explore the app and use the provided default credentials to log in as an administrator.
 
 Enjoy encrypting and decrypting your messages with our Simple Enciphering WEB App!
+
+### Docker
+build image:
+```
+sudo docker build -t web .
+```
+make container in detached mode using port 8080
+```
+sudo docker run -p 8080:8080 web
+```
