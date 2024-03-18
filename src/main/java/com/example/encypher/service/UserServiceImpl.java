@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
         user.addRole(role);
         userRepository.save(user);
 
-        var jwtToken = jwtService.generateToken(user);
+        var jwtToken = jwtService.generateAccessToken(user);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
